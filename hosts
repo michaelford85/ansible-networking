@@ -1,0 +1,32 @@
+localhost
+
+[webserver]
+107.21.69.127
+
+[ios]
+52.91.55.111
+34.201.104.130
+
+[mac]
+192.168.2.1
+
+[cisco]
+n9k ansible_host=192.168.2.3
+n9k2 ansible_host=192.168.2.3
+n9k3 ansible_host=192.168.2.3
+n9k4 ansible_host=192.168.2.3
+n9k5 ansible_host=192.168.2.3
+n9k6 ansible_host=192.168.2.3
+
+[webserver:vars]
+ansible_user=ec2-user
+ansible_ssh_private_key_file=./maf-demo/maf-demo-private.pem
+
+[ios:vars]
+ansible_network_os=ios
+ansible_user=ec2-user
+ansible_ssh_private_key_file=./maf-demo/maf-demo-private.pem
+
+
+[cisco:vars]
+ansible_network_os=nxos

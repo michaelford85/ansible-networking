@@ -1,0 +1,20 @@
+- name: Destroy demo instances in AWS
+  hosts: localhost
+  connection: local
+  become: no
+  gather_facts: no
+
+  vars:
+    ec2_wait: no
+    teardown: true
+    s3_state: absent
+    state: absent
+
+  roles:
+    - manage_ec2_instances
+
+  post_tasks:
+   - name: Remove workshop local files
+     file:
+       dest: "{{ playbook_dir }}/{{ ec2_name_prefix }}"
+       state: absent

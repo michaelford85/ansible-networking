@@ -1,0 +1,9 @@
+---
+- include_tasks: teardown.yml
+  when: teardown
+
+- name: provision demo in AWS public cloud
+  block:
+    - name: provision aws resources and instances
+      include_tasks: provision.yml
+  when: not teardown

@@ -1,0 +1,11 @@
+---
+
+- name: provision VPCs
+  include_tasks: create_vpcs.yml
+
+- name: provision CSR 1000v routers
+  include_tasks: create_csr1000vs.yml
+
+- name: provision Web Server
+  include_tasks: create_webserver.yml
+  
