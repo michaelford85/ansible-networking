@@ -40,6 +40,7 @@
     tags:
       Name: "{{ ec2_name_prefix }}-webserver"
       Demo: "{{ec2_name_prefix}}"
+      Function: webserver
   with_indexed_items:
     - "{{ webserver_output.instance_ids }}"
   when: webserver_output.instance_ids is not none

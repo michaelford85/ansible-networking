@@ -38,6 +38,7 @@
     tags:
       Name: "{{ ec2_name_prefix }}-rtr1"
       Demo: "{{ ec2_name_prefix }}"
+      Function: router
   with_indexed_items:
     - "{{ rtr1_output.instance_ids }}"
   when: rtr1_output.instance_ids is not none
@@ -62,6 +63,7 @@
     tags:
       Name: "{{ ec2_name_prefix }}-rtr2"
       Demo: "{{ ec2_name_prefix }}"
+      Function: router
   with_indexed_items:
     - "{{ rtr2_output.instance_ids }}"
   when: rtr2_output.instance_ids is not none

@@ -36,19 +36,3 @@
 
   roles:
     - manage_ec2_instances
-
-- name: Set up webserver
-  hosts: webserver
-  become: yes
-
-  tasks:
-
-  - name: Ensure Apache is installed on webserver
-    yum:
-      name: httpd
-      state: latest
-
-  - name: Ensure Apache is running
-    service:
-      name: httpd
-      state: started
