@@ -1,0 +1,8 @@
+---
+- name: Initial Router Set up
+  hosts: ios
+  connection: network_cli
+  gather_facts: no
+
+  roles:
+    - base-config

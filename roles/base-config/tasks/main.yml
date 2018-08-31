@@ -1,0 +1,23 @@
+---
+# tasks file for base-config
+
+- name: Collect Router facts
+  ios_facts:
+  register: all_facts
+
+# - name: debug router facts
+#   debug:
+#     var: all_facts
+
+- name: Set hostname
+  ios_config:
+    lines: hostname {{ inventory_hostname }}
+  with_items: "{{ groups['ios'] }}"
+
+- name: SSH settings
+  ios_config:
+    lines:
+      - logging synchronous
+      - privilege level 15
+      - exec-timeout 0 0
+    parents: line vty 0 4
