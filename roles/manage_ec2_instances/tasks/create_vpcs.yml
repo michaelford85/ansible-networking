@@ -146,11 +146,12 @@
     mode: '0400'
   when: create_key.changed
 
-- name: debugging all variables for ec2 instance creation VPC-1
-  debug:
-    msg:
-      - "ec2_name_prefix: {{ec2_name_prefix}}"
-      - "ec2_vpc_id: {{ ec2_vpc_id }}"
-      - "{{ ec2_name_prefix }}-key: {{ ec2_name_prefix }}-key"
-      - "ec2_security_group: {{ ec2_security_group }}"
-      - "ec2_vpc_subnet_id: {{ ec2_vpc_subnet_id }}"
+# - name: debugging all variables for ec2 instance creation VPC-1
+#   debug:
+#     msg:
+#       - "ec2_name_prefix: {{ec2_name_prefix}}"
+#       - "ec2_vpc_id: {{ ec2_vpc_id }}"
+#       - "{{ ec2_name_prefix }}-key: {{ ec2_name_prefix }}-key"
+#       - "ec2_security_group: {{ ec2_security_group }}"
+#       - "ec2_webserver_security_group: {{ ec2_webserver_security_group }}"
+#       - "ec2_vpc_subnet_id: {{ ec2_vpc_subnet_id }}"

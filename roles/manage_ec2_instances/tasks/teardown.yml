@@ -1,10 +1,10 @@
-- name: debug ec2_region
-  debug:
-    var: ec2_region
-
-- name: debug ec2_name_prefix
-  debug:
-    var: ec2_name_prefix
+# - name: debug ec2_region
+#   debug:
+#     var: ec2_region
+#
+# - name: debug ec2_name_prefix
+#   debug:
+#     var: ec2_name_prefix
 
 - name: grab facts for workshop
   ec2_instance_facts:
@@ -14,9 +14,9 @@
       tag:Demo: "{{ec2_name_prefix}}"
   register: all_workshop_nodes
 
-- name: debug test
-  debug:
-     var: all_workshop_nodes
+# - name: debug test
+#   debug:
+#      var: all_workshop_nodes
 
 - name: destroy EC2 router and webserver instances
   ec2:
@@ -34,10 +34,10 @@
     region: "{{ ec2_region }}"
   register: vpc_net_facts
 
-- name: debugging vpc id for {{ ec2_name_prefix }}
-  debug:
-    msg: "vpc id:'{{vpc_net_facts.vpcs[0].id}}'"
-  when: vpc_net_facts.vpcs|length > 0
+# - name: debugging vpc id for {{ ec2_name_prefix }}
+#   debug:
+#     msg: "vpc id:'{{vpc_net_facts.vpcs[0].id}}'"
+#   when: vpc_net_facts.vpcs|length > 0
 
 - name: use set fact for easier variables
   set_fact:

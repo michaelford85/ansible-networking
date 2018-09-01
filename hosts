@@ -1,11 +1,11 @@
 localhost
 
 [webserver]
-54.86.139.15
+18.212.239.5
 
 [ios]
-router1 ansible_host=34.207.117.78
-router2 ansible_host=18.212.213.172
+router1 ansible_host=54.89.159.86
+router2 ansible_host=54.84.180.51
 
 
 [mac]
